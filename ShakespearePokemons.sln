@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Pokemon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Commons", "ShakespearePokemons.Commons\ShakespearePokemons.Commons.csproj", "{D42F2A1D-B5D0-495C-8F61-92015B487F6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Tests", "ShakespearePokemons.Tests\ShakespearePokemons.Tests.csproj", "{C5D227E1-5AB9-4784-BF27-735A13C1A07C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Client", "ShakespearePokemons.Client\ShakespearePokemons.Client.csproj", "{A4F32E46-043B-40BD-A16A-BE86F9562862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Contracts", "ShakespearePokemons.Contracts\ShakespearePokemons.Contracts.csproj", "{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{D42F2A1D-B5D0-495C-8F61-92015B487F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D42F2A1D-B5D0-495C-8F61-92015B487F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D42F2A1D-B5D0-495C-8F61-92015B487F6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D227E1-5AB9-4784-BF27-735A13C1A07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D227E1-5AB9-4784-BF27-735A13C1A07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D227E1-5AB9-4784-BF27-735A13C1A07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D227E1-5AB9-4784-BF27-735A13C1A07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4F32E46-043B-40BD-A16A-BE86F9562862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F32E46-043B-40BD-A16A-BE86F9562862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F32E46-043B-40BD-A16A-BE86F9562862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F32E46-043B-40BD-A16A-BE86F9562862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
