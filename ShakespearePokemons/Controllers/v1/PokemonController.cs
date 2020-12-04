@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 using static ShakespearePokemons.Contracts.ApiVersions;
 
-namespace ShakespearePokemons.Controllers
+namespace ShakespearePokemons.Controllers.v1
 {
     /// <summary> Resource for Pokemons. </summary>
     [ApiVersion(V1Tag)]
@@ -48,7 +48,12 @@ namespace ShakespearePokemons.Controllers
             try
             {
                 var shakespeareDescriptionTranslation = await _pokemonService.GetPokemonDescriptionAsShakespeareAsync(pokemonName);
-                return Ok(new PokemonResponse(pokemonName, shakespeareDescriptionTranslation));
+                var pokemonResponse = new PokemonResponse
+                {
+                    Name = pokemonName,
+                    Description = shakespeareDescriptionTranslation
+                };
+                return Ok(pokemonResponse);
             }
             catch (BrokenCircuitException)
             {
