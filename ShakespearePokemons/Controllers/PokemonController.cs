@@ -8,14 +8,13 @@ using static ShakespearePokemons.Contracts.ApiVersions;
 
 namespace ShakespearePokemons.Controllers
 {
-    [Consumes("application/json")]
-    [Produces("application/json")]
     [ApiVersion(V1Tag)]
-    [ProducesResponseType(typeof(PokemonResponse), Status200OK)]
-    [ProducesResponseType(Status400BadRequest)]
     [ApiController]
     public class PokemonController : ControllerBase
     {
+
+        [ProducesResponseType(typeof(PokemonResponse), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
         [HttpGet(ApiRoutes.Pokemon.GetTranslation)]
         public async Task<IActionResult> GetTranslation(
             [FromRoute] string pokemonName, 
