@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using PokeApiNet;
+using ShakespearePokemons.Commons;
 
 namespace ShakespearePokemons.PokemonBroker
 {
@@ -8,7 +9,7 @@ namespace ShakespearePokemons.PokemonBroker
         readonly PokeApiClient _pokeClient;
         public PokemonClient()
         {
-            _pokeClient = new PokeApiClient();
+            _pokeClient = new PokeApiClient(new SimpleExceptionsHandler());
         }
 
         private async Task<PokemonSpecies> GetPokemonAsync(string pokemonName) =>
