@@ -9,6 +9,12 @@ using ShakespearePokemons.PokemonBroker;
 using ShakespearePokemons.Services.Implementations;
 using ShakespearePokemons.Services.Interfaces;
 using ShakespearePokemons.ShakespeareBroker;
+using Polly;
+using Polly.Extensions.Http;
+using System;
+using System.Net.Http;
+using Polly.CircuitBreaker;
+using ShakespearePokemons.Commons;
 
 namespace ShakespearePokemons
 {
@@ -28,12 +34,26 @@ namespace ShakespearePokemons
             services.AddSwaggerWithApiVersioning(Configuration);
             services.AddHealthChecks();
             var ShakespeareSettings = Configuration.GetSetting<ShakespeareSettings>();
+
             services.AddHttpClient<IShakespeareClient, ShakespeareClient>(client =>
             {
                 client.BaseAddress = ShakespeareSettings.BaseUri;
-            });
+            })
+            .AddHttpMessageHandler<SimpleExceptionsHandler>()
+            .AddPolicyHandler(GetCircuitBreakerPolicy());
+            services.AddTransient<SimpleExceptionsHandler>();
             services.AddSingleton<IPokemonClient, PokemonClient>();
             services.AddTransient<IPokemonService, PokemonService>();
+        }
+
+        static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
+        {
+            return HttpPolicyExtensions
+                .HandleTransientHttpError()
+                .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.TooManyRequests)
+                .CircuitBreakerAsync(5, TimeSpan.FromMinutes(5),
+                  (ex, time) => Console.WriteLine($"Circuit broken. Will be open in {time.TotalSeconds} seconds."),
+                  () => Console.WriteLine("Circuit Reset."));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,4 +73,5 @@ namespace ShakespearePokemons
             app.UserSwagger(provider);
         }
     }
+
 }
