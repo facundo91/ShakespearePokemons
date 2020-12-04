@@ -22,6 +22,7 @@ namespace ShakespearePokemons
         {
             services.AddControllers();
             services.AddSwaggerWithApiVersioning(Configuration);
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +34,11 @@ namespace ShakespearePokemons
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseEndpoints(builder => builder.MapControllers());
+            app.UseEndpoints(builder =>
+            {
+                builder.MapControllers();
+                builder.MapHealthChecks("/health");
+            });
             app.UserSwagger(provider);
         }
     }
