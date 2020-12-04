@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Flurl;
 using System.Net.Http;
-using System.Web;
 using System.Threading.Tasks;
 
 namespace ShakespearePokemons.ShakespeareBroker
@@ -13,14 +12,13 @@ namespace ShakespearePokemons.ShakespeareBroker
         {
             _httpClient = httpClient;
         }
+
         public async Task<ShakespeareApiResponse> GetTranslationAsync(string textToTranslate)
         {
-            var endpoint = new Uri(_httpClient.BaseAddress, "shakespeare");
-            var builder = new UriBuilder(endpoint);
-            var query = HttpUtility.ParseQueryString(builder.Query);
-            query["text"] = textToTranslate;
-            builder.Query = query.ToString();
-            var result = await _httpClient.GetAsync(builder.ToString());
+            var url = _httpClient.BaseAddress
+                .AppendPathSegment("shakespeare")
+                .SetQueryParam("text", textToTranslate);
+            var result = await _httpClient.GetAsync(url);
             return await result.Content.ReadAsAsync<ShakespeareApiResponse>();
         }
     }
