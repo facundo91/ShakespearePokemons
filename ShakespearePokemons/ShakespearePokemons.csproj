@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShakespearePokemons.Commons\ShakespearePokemons.Commons.csproj" />
+    <ProjectReference Include="..\ShakespearePokemons.Contracts\ShakespearePokemons.Contracts.csproj" />
     <ProjectReference Include="..\ShakespearePokemons.PokemonBroker\ShakespearePokemons.PokemonBroker.csproj" />
     <ProjectReference Include="..\ShakespearePokemons.ShakespeareBroker\ShakespearePokemons.ShakespeareBroker.csproj" />
   </ItemGroup>

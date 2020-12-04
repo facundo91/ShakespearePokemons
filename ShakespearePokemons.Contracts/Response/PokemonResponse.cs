@@ -1,9 +1,13 @@
 ﻿namespace ShakespearePokemons.Contracts.Response
 {
     /// <summary> Simple Pokemon response </summary>
-    public sealed record PokemonResponse(
+    public sealed class PokemonResponse
+    {
         /// <summary> Name of the Pokemon </summary>
-        string Name,
+        public string Name { get; set; }
+
         /// <summary> Description of the Pokemon </summary>
-        string Description);
+        public string Description { get; set; }
+    }
+
 }
