@@ -5,6 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShakespearePokemons.Extensions;
+using ShakespearePokemons.PokemonBroker;
+using ShakespearePokemons.Services.Implementations;
+using ShakespearePokemons.Services.Interfaces;
+using ShakespearePokemons.ShakespeareBroker;
 
 namespace ShakespearePokemons
 {
@@ -23,6 +27,13 @@ namespace ShakespearePokemons
             services.AddControllers();
             services.AddSwaggerWithApiVersioning(Configuration);
             services.AddHealthChecks();
+            var ShakespeareSettings = Configuration.GetSetting<ShakespeareSettings>();
+            services.AddHttpClient<IShakespeareClient, ShakespeareClient>(client =>
+            {
+                client.BaseAddress = ShakespeareSettings.BaseUri;
+            });
+            services.AddSingleton<IPokemonClient, PokemonClient>();
+            services.AddTransient<IPokemonService, PokemonService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
