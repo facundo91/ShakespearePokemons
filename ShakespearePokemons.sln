@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons", "ShakespearePokemons\ShakespearePokemons.csproj", "{D4E62387-37E0-4966-A96E-648A2EBD635D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.ShakespeareBroker", "ShakespearePokemons.ShakespeareBroker\ShakespearePokemons.ShakespeareBroker.csproj", "{435575B9-6700-4912-B509-8352D60CA56A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D4E62387-37E0-4966-A96E-648A2EBD635D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E62387-37E0-4966-A96E-648A2EBD635D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4E62387-37E0-4966-A96E-648A2EBD635D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435575B9-6700-4912-B509-8352D60CA56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435575B9-6700-4912-B509-8352D60CA56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435575B9-6700-4912-B509-8352D60CA56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435575B9-6700-4912-B509-8352D60CA56A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
