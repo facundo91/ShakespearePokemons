@@ -17,6 +17,7 @@ namespace ShakespearePokemons.Extensions
                 options =>
                 {
                     // reporting api versions will return the headers "api-supported-versions" and "api-deprecated-versions"
+                    options.AssumeDefaultVersionWhenUnspecified = true;
                     options.ReportApiVersions = true;
                 });
             services.AddVersionedApiExplorer(

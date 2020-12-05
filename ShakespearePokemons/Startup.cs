@@ -15,6 +15,7 @@ using System;
 using System.Net.Http;
 using Polly.CircuitBreaker;
 using ShakespearePokemons.Commons;
+using ShakespearePokemons.HealthChecks;
 
 namespace ShakespearePokemons
 {
@@ -32,7 +33,7 @@ namespace ShakespearePokemons
         {
             services.AddControllers();
             services.AddSwaggerWithApiVersioning(Configuration);
-            services.AddHealthChecks();
+            services.AddHealthChecks().AddCheck<ShakespeareHealthCheck>(nameof(ShakespeareHealthCheck));
             var ShakespeareSettings = Configuration.GetSetting<ShakespeareSettings>();
 
             services
@@ -44,7 +45,7 @@ namespace ShakespearePokemons
             services.AddTransient<SimpleExceptionsHandler>();
             services.AddSingleton<IPokemonClient, PokemonClient>();
             services.AddTransient<IPokemonService, PokemonService>();
-        }
+            services.AddSingleton<ShakespeareHealthCheck>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +56,11 @@ namespace ShakespearePokemons
 
             app.UseHttpsRedirection();
 
+            app.AddHealthChecks();
             app.UseRouting();
             app.UseEndpoints(builder =>
             {
                 builder.MapControllers();
-                builder.MapHealthChecks("/health");
             });
             app.UserSwagger(provider);
         }

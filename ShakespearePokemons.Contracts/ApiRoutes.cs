@@ -10,5 +10,7 @@
             public const string GetTranslation = Relative + "/{pokemonName}";
         }
 
+        public const string Health = Base + "/health";
+
     }
 }
