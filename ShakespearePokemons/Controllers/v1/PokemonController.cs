@@ -42,8 +42,8 @@ namespace ShakespearePokemons.Controllers.v1
         {
             if (string.IsNullOrWhiteSpace(pokemonName))
             {
-                ModelState.AddModelError("Pokemon Name", "Pokemon's name cannot be null, empty nor white space.");
-                return apiBehaviorOptions.Value.InvalidModelStateResponseFactory(ControllerContext);
+                var errorResponse = new ErrorResponse(Status400BadRequest, "Pokemon's name cannot be null, empty nor white space.");
+                return BadRequest(errorResponse);
             }
             try
             {
@@ -57,11 +57,13 @@ namespace ShakespearePokemons.Controllers.v1
             }
             catch (BrokenCircuitException)
             {
-                return StatusCode(Status403Forbidden, "Shakespeare API is inoperative, please try later on. Circuit is now open.");
+                var errorResponse = new ErrorResponse(Status403Forbidden, "Shakespeare API is inoperative, please try later on. Circuit is now open.");
+                return StatusCode(Status403Forbidden, errorResponse);
             }
             catch (SimpleHttpResponseException simpleHttpResponseException)
             {
-                return StatusCode(simpleHttpResponseException.StatusCodeValue, simpleHttpResponseException.Message);
+                var errorResponse = new ErrorResponse(simpleHttpResponseException.StatusCode, simpleHttpResponseException.Message);
+                return StatusCode(simpleHttpResponseException.StatusCodeValue, errorResponse);
             }
         }
     }
