@@ -4,6 +4,7 @@ using ShakespearePokemons.Commons;
 using ShakespearePokemons.Contracts;
 using ShakespearePokemons.Contracts.Response;
 using ShakespearePokemons.Services.Interfaces;
+using System;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 using static ShakespearePokemons.Contracts.ApiVersions;
@@ -61,6 +62,11 @@ namespace ShakespearePokemons.Controllers.v1
             {
                 var errorResponse = new ErrorResponse(simpleHttpResponseException.StatusCode, simpleHttpResponseException.Message);
                 return StatusCode(simpleHttpResponseException.StatusCodeValue, errorResponse);
+            }
+            catch (Exception exception)
+            {
+                var errorResponse = new ErrorResponse(Status500InternalServerError, exception.Message);
+                return StatusCode(Status500InternalServerError, errorResponse);
             }
         }
     }
