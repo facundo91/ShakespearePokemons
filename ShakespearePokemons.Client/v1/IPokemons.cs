@@ -8,6 +8,6 @@ namespace ShakespearePokemons.Client
     {
 
         [Get("/api/pokemon/{pokemonName}?api-version=1.0")]
-        Task<ApiResponse<PokemonResponse>> GetAsync(string pokemonName);
+        Task<ApiResponse<PokemonResponse>> GetTranslationAsync(string pokemonName);
     }
 }
