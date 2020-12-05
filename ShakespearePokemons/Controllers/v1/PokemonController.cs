@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using Polly.CircuitBreaker;
 using ShakespearePokemons.Commons;
 using ShakespearePokemons.Contracts;
@@ -27,7 +26,6 @@ namespace ShakespearePokemons.Controllers.v1
         /// Endpoint to get the description of the Pokemon as William Shakespeare would have said it. 
         /// </summary>
         /// <param name="pokemonName">Name of the pokemon.</param>
-        /// <param name="apiBehaviorOptions">Parameter bound by using FromServices attribute.</param>
         /// <returns>A simple <see cref="PokemonResponse"/> object response.</returns>
         /// <response code="200">Returns the translated description of the Pokemon.</response>
         /// <response code="404">Pokemon not found.</response>
@@ -36,9 +34,8 @@ namespace ShakespearePokemons.Controllers.v1
         /// <response code="403">The Circuit is open, you should wait.</response>
         [ProducesResponseType(typeof(PokemonResponse), Status200OK)]
         [HttpGet(ApiRoutes.Pokemon.GetTranslation)]
-        public async Task<IActionResult> GetTranslation(
-            [FromRoute] string pokemonName,
-            [FromServices] IOptions<ApiBehaviorOptions> apiBehaviorOptions)
+        [ResponseCache(Duration = 30)]
+        public async Task<IActionResult> GetTranslation([FromRoute] string pokemonName)
         {
             if (string.IsNullOrWhiteSpace(pokemonName))
             {
