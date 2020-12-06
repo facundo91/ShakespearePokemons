@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons", "ShakespearePokemons\ShakespearePokemons.csproj", "{D4E62387-37E0-4966-A96E-648A2EBD635D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons", "ShakespearePokemons\ShakespearePokemons.csproj", "{D4E62387-37E0-4966-A96E-648A2EBD635D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.ShakespeareBroker", "ShakespearePokemons.ShakespeareBroker\ShakespearePokemons.ShakespeareBroker.csproj", "{435575B9-6700-4912-B509-8352D60CA56A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons.ShakespeareBroker", "ShakespearePokemons.ShakespeareBroker\ShakespearePokemons.ShakespeareBroker.csproj", "{435575B9-6700-4912-B509-8352D60CA56A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.PokemonBroker", "ShakespearePokemons.PokemonBroker\ShakespearePokemons.PokemonBroker.csproj", "{03CDFF63-F82B-42AC-92EC-26DD7AC37FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons.PokemonBroker", "ShakespearePokemons.PokemonBroker\ShakespearePokemons.PokemonBroker.csproj", "{03CDFF63-F82B-42AC-92EC-26DD7AC37FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Commons", "ShakespearePokemons.Commons\ShakespearePokemons.Commons.csproj", "{D42F2A1D-B5D0-495C-8F61-92015B487F6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons.Commons", "ShakespearePokemons.Commons\ShakespearePokemons.Commons.csproj", "{D42F2A1D-B5D0-495C-8F61-92015B487F6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Tests", "ShakespearePokemons.Tests\ShakespearePokemons.Tests.csproj", "{C5D227E1-5AB9-4784-BF27-735A13C1A07C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons.Tests", "ShakespearePokemons.Tests\ShakespearePokemons.Tests.csproj", "{C5D227E1-5AB9-4784-BF27-735A13C1A07C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Client", "ShakespearePokemons.Client\ShakespearePokemons.Client.csproj", "{A4F32E46-043B-40BD-A16A-BE86F9562862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons.Client", "ShakespearePokemons.Client\ShakespearePokemons.Client.csproj", "{A4F32E46-043B-40BD-A16A-BE86F9562862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakespearePokemons.Contracts", "ShakespearePokemons.Contracts\ShakespearePokemons.Contracts.csproj", "{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespearePokemons.Contracts", "ShakespearePokemons.Contracts\ShakespearePokemons.Contracts.csproj", "{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C22E8BB4-D308-4470-96BE-987C2A94B331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF1A0A4D-EF1D-4A38-AE30-D74A7AC55398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C22E8BB4-D308-4470-96BE-987C2A94B331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C22E8BB4-D308-4470-96BE-987C2A94B331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C22E8BB4-D308-4470-96BE-987C2A94B331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C22E8BB4-D308-4470-96BE-987C2A94B331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  shakespearepokemons:
+    image: ${DOCKER_REGISTRY-}shakespearepokemons
+    build:
+      context: .
+      dockerfile: ShakespearePokemons/Dockerfile
+    ports:
+        - "32768:443"
