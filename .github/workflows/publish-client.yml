@@ -23,12 +23,12 @@ jobs:
     - name: Change Folder
       run: cd .\ShakespearePokemons.Client\
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj -c Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj --no-restore --verbosity normal
     - name: Package
-      run: dotnet pack -c Release
+      run: dotnet pack .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj -c Release
     - name: Publish
       run: dotnet nuget push ShakespearePokemons.Client/bin/Release/*.nupkg --skip-duplicate
