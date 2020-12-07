@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 5.0.100
         source-url: https://nuget.pkg.github.com/facundo91/index.json
       env:
-        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN})
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Change Folder
       run: cd .\ShakespearePokemons.Client\
     - name: Install dependencies
