@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>ShakespearePokemons.Client</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>facundo91</Authors>
+    <PackageDescription>This is a client library for Shakespeare Pokemons API</PackageDescription>
+    <RepositoryUrl>https://github.com/facundo91/ShakespearePokemons</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-name: .NET Core
+name: Publish Client
 
 on:
   push:
@@ -20,15 +20,18 @@ jobs:
         source-url: https://nuget.pkg.github.com/facundo91/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    - name: Change Folder
-      run: cd .\ShakespearePokemons.Client\
     - name: Install dependencies
-      run: dotnet restore .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj
+      run: dotnet restore
+      working-directory: ShakespearePokemons.Client
     - name: Build
-      run: dotnet build .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj -c Release --no-restore
+      run: dotnet build -c Release --no-restore
+      working-directory: ShakespearePokemons.Client
     - name: Test
-      run: dotnet test .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal
+      working-directory: ShakespearePokemons.Client
     - name: Package
-      run: dotnet pack .\ShakespearePokemons.Client\ShakespearePokemons.Client.cproj -c Release
+      run: dotnet pack -c Release
+      working-directory: ShakespearePokemons.Client
     - name: Publish
-      run: dotnet nuget push ShakespearePokemons.Client/bin/Release/*.nupkg --skip-duplicate
+      run: dotnet nuget push bin/Release/*.nupkg --skip-duplicate
+      working-directory: ShakespearePokemons.Client

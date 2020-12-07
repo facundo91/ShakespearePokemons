@@ -1,6 +1,8 @@
 # Shakespeare Pokemons
 Project for job interview created by Facundo Aita
+<br/>
 
+<br/>
 
 ## How to build using **dotnet**
 ### Requirements
@@ -15,7 +17,7 @@ Project for job interview created by Facundo Aita
 2. Go to the repository folder
 `cd ShakespearePokemons`
 
-3. Build the project `dotnet build .\ShakespearePokemons\ShakespearePokemons.csproj`
+3. Publish the project `dotnet publish .\ShakespearePokemons\ShakespearePokemons.csproj`
 
 4. Run the excecutable `.\ShakespearePokemons\bin\Debug\net5.0\publish\ShakespearePokemons.exe`
 
@@ -36,4 +38,8 @@ Project for job interview created by Facundo Aita
 
 3. Build the image & run a container `docker-compose -p .\docker-compose.dcproj up -d`
 
-5. Open a browser and go to  [localhost:32768](https://localhost:32768)
+5. Open a browser and go to  [localhost:5001](https://localhost:5001)
+
+## Live Demo running in  **Azure**
+### Requirements
+You can see a live demo of the API through [facundo91.com](http://www.shakespearepokemons.facundo91.com/) or through [Azure](https://shakespearepokemons.azurewebsites.net/)

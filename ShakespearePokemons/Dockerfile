@@ -2,8 +2,8 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 80/tcp
+EXPOSE 443/tcp
 
 FROM mcr.microsoft.com/dotnet/sdk AS publish
 WORKDIR /src
